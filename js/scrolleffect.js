@@ -106,7 +106,7 @@ function exeScrollEvent(){
 	
 	window.addEventListener('scroll',scrollEvent,false);
 }
-//exeScrollEvent();
+exeScrollEvent();
 
 /*
 画像ファイル名にpicが含まれているものに
@@ -143,7 +143,7 @@ function exefade(){
 	}
 	window.addEventListener('scroll',scrollFadeInOut,false);
 }
-//exefade();
+exefade();
 
 function effectScroll(){
 	const documentHeight = getdocumentHeight();
