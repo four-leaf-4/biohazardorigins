@@ -1,0 +1,690 @@
+﻿@charset "utf-8";
+/*common*/
+html,body{
+	font-size:1em;
+	line-height:1.4;
+	font-family: 'Noto Serif JP',"ヒラギノ明朝 ProN W3","HiraMinProN-W3","HG明朝E","ＭＳ Ｐ明朝","MS PMincho","MS 明朝",serif;
+	}
+body{
+	background-color:#fff;
+	height:auto;
+	overflow:auto;
+	box-sizing:border-box;
+	counter-reset:num_headline;
+	}
+div{
+	box-sizing:border-box;
+	}
+img{
+	display: block;
+    width: 100%;
+	}
+span.sup{
+	font-size: 0.5em;
+    vertical-align: super;
+	}
+/*common end*/
+/*header and footer start*/
+header,footer{
+    padding: 5px 15px;
+    margin: auto;
+	background-color: #2f333f;
+	}
+header ul,footer ul{
+	list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+	align-items:center;
+    max-width:100%;
+    width: 100%;
+    margin: 0 auto;
+	}
+header li[class^="side_"]{}
+header ul a,
+footer ul a{
+	display: block;
+	}
+header ul .logo_ecap{
+	max-width:220px;
+	width:100%;	
+	}
+footer ul .logo_capcom{
+	max-width:110px;
+	width:100%;
+	}
+header .logo_ecap_yahoo{
+    max-width: 300px;
+    width: 100%;
+}
+header .logo_ecap_rakuten{
+	max-width:200px;
+	width:100%;
+	}
+header ul .btn_twshare{
+	max-width:50px;
+	width:100%;
+	min-width:32px;
+	height:auto;
+	}
+footer{
+	color:#fff;
+	}
+footer .copyright{
+	text-align: right;
+	font-size: 0.5rem;
+	}
+/*header and footer end*/
+/*headline start*/
+h1{
+	font-size:2rem;
+	}
+h2{
+	font-size:1.5rem;
+	}
+h3{
+	font-size:1.25rem;
+	}
+h6:before{
+	counter-increment:num_headline;
+	content:"第"counter(num_headline)"章";	
+	}
+/*headline end*/
+/*list start*/
+ul[class^="list_"]{
+    counter-reset: list_num;
+    max-width: 640px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+	}
+ul[class^="list_"] li{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+	}
+ul[class^="list_"] li:before{
+    counter-increment: list_num;
+    content:"※"counter(list_num);
+	padding: 0 0.5em 0 0;
+	}
+.spec table{
+	width: auto;
+    table-layout: fixed;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    line-height: 2;
+	}
+.spec th{
+	width:7em;
+	}
+.spec td{
+	display:flex;
+	width:20em;
+	}
+.spec td:before{
+	content:"：";
+	display:block;
+	}
+/*list end*/
+/*main start*/
+main#biohazardOrigins{
+	display:block;
+	background-color:#000;
+	color:#fff;
+	height: auto;
+	overflow: auto;
+	}
+/*area_topVisual start*/
+section[class="area_topVisual"]{
+	margin:0;
+	}
+.area_topVisual .topVisual img{
+	margin:auto;
+	}
+.area_topVisual .topVisual img[src*="top_visual_pc.jpg"]{
+	max-width:1920px;
+	width:100%;	
+	}
+.area_topVisual .topVisual img[src*="top_visual_sp.jpg"],
+img[src*="biohazard_origins_limitedEdition_sp.png"]{
+	display: none;
+	}
+.top_text_area{
+	background-image: url(../img/pic_toparea_pouch_soft.png);
+	background-size: 60%;
+	background-position:0% 100%;
+	background-repeat: no-repeat;
+	max-width: 1920px;
+	width: 100%;
+	margin: auto;
+	padding:0 0 10% 0;
+	}
+.top_text_contents{
+	max-width:50%;
+	width:100%;
+	margin:0rem 0rem 2rem auto;
+	padding:2rem 1rem;
+	}
+.top_text_contents .reserve_start{
+	font-size: 5rem;
+	font-weight:700;
+	text-align:right;
+	color: #c92227;
+	margin:1rem 0 0 0;
+}
+.top_text_contents .date{
+	font-size: 3.5rem;
+	font-weight: 700;
+	text-align: right;
+	word-break: keep-all;	
+	}
+.top_text_contents .date span{
+	font-size:1.5em;
+	color:#c92227;
+	}
+@media screen and (max-width:1024px){
+	.top_text_area{
+		background-position:0% 50%;
+		}	
+	}
+@media screen and (max-width:768px){
+	.top_text_contents{
+		max-width:100%;
+		margin:auto;
+		padding:0 1rem 1rem;
+		}
+	.top_text_area{
+		background-size: contain;
+		background-position:50% 100%;
+		padding:0 0 50% 0;
+		}
+	.top_text_contents .reserve_start{
+		font-size: 3rem;
+		}
+	.top_text_contents .date{
+		font-size: 2rem;
+		}	
+	}
+@media screen and (max-width:426px){
+	.area_topVisual .topVisual img[src*="top_visual_pc.jpg"],
+	img[src*="biohazard_origins_limitedEdition_pc.png"]{
+		display:none;
+		}
+	.area_topVisual .topVisual img[src*="top_visual_sp.jpg"],
+	img[src*="biohazard_origins_limitedEdition_sp.png"]{
+		display:block;	
+		}
+	.top_text_contents .reserve_start{
+		text-align: center;
+		}
+	}
+/*area_topVisual end*/
+/*notice_downloadver start*/
+.notice_downloadver{
+	max-width: 960px;
+	width: 100%;
+	margin: 4rem auto;
+	padding:0 1rem;
+	}
+.notice_downloadver_inner{
+	padding: 2rem;
+	box-sizing: border-box;
+	border: 1px solid #c92227;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;	
+	flex-wrap: nowrap;
+	}
+.notice_downloadver_inner figure{
+	max-width: 250px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	}
+.notice_downloadver_inner .notice_txt{
+	max-width: 35em;
+	width: 100%;
+	}
+.notice_downloadver_inner .detail_download{
+	padding:0.5rem 0;
+	font-size: 0.75rem;
+	}
+.notice_downloadver_inner .detail_download > div{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	}
+.notice_downloadver_inner .note{
+	font-size: 0.75rem;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	}
+.notice_downloadver_inner .note:before{
+	content:"※";
+	display:block;
+	}
+@media screen and (max-width:768px){
+	.notice_downloadver_inner{
+		flex-wrap: wrap;
+		padding: 1rem;
+		}
+	.notice_downloadver_inner .notice_txt{
+		padding: 1rem 0 0 0;
+		}
+	.notice_downloadver_inner .detail_download > div{
+		flex-direction:column;
+		text-align: center;
+		}
+	}
+/*notice_downloadver end*/
+/*area_lineUp start*/
+[class^="area_"]{
+	margin:0;
+	}
+section[class^="area_"] .topheadline{
+	text-align:center;
+	background-image:url(../img/bg_headline.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	width:100%;
+	padding:2rem 0;
+	margin:2rem 0;
+	font-size: 4rem;
+	}
+[class^="background_"]{
+	background-repeat:no-repeat;
+	background-position:top;
+	background-attachment: scroll;
+	}
+[class="background_lineup"]{
+	background-size:cover;
+	background-image:url(../img/bg_section_lineup.jpg);
+	}
+[class="background_aboutGoods"]{
+	background-size:cover;
+	background-image:url(../img/bg_section_pouch.jpg);
+	}
+[class^="outer_"]{
+	max-width: 1280px;
+	width: 100%;
+	margin: auto;
+	padding:4rem 1rem;
+	}
+.outer_lineuplist{
+	}
+.lineup_first{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	list-style:none;
+	margin: 2rem 0;
+	}
+.lineup_first [class^="lineup_"]{
+	max-width: 550px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.90);
+  border: 3px solid #c92227;
+  box-sizing: border-box;
+  /*padding:2rem 1rem;*/
+	}
+.lineup_first [class^="lineup_"] .detail{
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	height: 100%;
+	}
+.lineup_first [class="lineup_set"] .detail{
+	background-image: url(../img/logo_stars.png);
+	background-size:50%;
+	background-position: left center;
+	background-repeat: no-repeat;	
+	}
+.detail .detail_title{
+	/*max-width: 20em; */
+	/* width: 100%; */
+	/* margin: 0 auto; */
+	font-size: 2.0rem;
+	text-align: center;
+	word-break: keep-all;
+	padding: 2rem 1rem;
+	}
+.detail .detail_pic{}
+.detail .detail_contents dt{
+	font-size: 1.25rem;
+	text-align: center;
+	}
+.detail .detail_contents dd{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	font-size: 1.25rem;
+	text-align: left;
+	word-break: keep-all;
+	}
+.detail > dd{
+	padding: 0 1rem;
+	}
+.detail .detail_contents dd:before{
+	content:"・";
+	display:block;
+	}
+.detail .detail_price{
+	font-size:2.5rem;
+	text-align:center;
+	}
+.detail .detail_price:before{
+	content:"価格：";
+	font-size:0.5em;
+	padding: 0 0.5rem 0 0;
+	}
+.detail .detail_price:after{
+	content:"円+税";
+	font-size:0.5em;
+	padding:0 0 0 0.5rem;
+	}
+.detail .detail_btn{
+	perspective: 500px;
+	transform-style: preserve-3d;
+	padding:0 1rem 2rem;
+	}
+.lineup_2nd [class^="lineup_"]{
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 3px solid #c92227;
+	box-sizing: border-box;
+	padding: 2rem 1rem;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+	}
+.lineup_2nd figure{
+	max-width: 550px;
+  width: 100%;
+	}
+.lineup_2nd dl{
+	max-width: 550px;
+  width: 100%;
+	display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+	}
+.btn_reserve {
+	display: block;
+	max-width: 500px;
+	width:100%;
+	font-size: 1.5rem;
+	font-weight: 900;
+	text-align: center;
+	color: #fff;
+    text-decoration: none;
+    background-color: #c92227;
+    background-blend-mode: hard-light;
+    background-image: url(../img/bg_btn_reserve.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1.5rem 0;
+    margin: 1rem auto 0;
+    border: 1px solid #c92227;
+    box-shadow: inset 0px 0px 10px 1px rgba(201, 34, 39, 0.5);
+    box-sizing: border-box;
+    animation: animebtn 2.0s linear infinite;
+}
+@keyframes animebtn{
+		0%{
+			box-shadow: inset 0px 0px 10px 1px rgba(201, 34, 39, 0.5);
+			background-color:#580003;
+			}
+		50%{
+			box-shadow: inset 0px 0px 10px 6px rgba(201, 34, 39, 0.5);
+			background-color:#c92227;
+			}
+		100%{
+			box-shadow: inset 0px 0px 10px 1px rgba(201, 34, 39, 0.5);
+			background-color:  #580003;
+			}
+	}
+@media screen and (max-width:426px){
+	.detail .detail_title{
+		font-size:1.5rem;
+		}
+	section[class^="area_"] .topheadline{
+		font-size: 2rem;
+		}
+	.lineup_first{
+		flex-wrap:wrap;
+		}
+	.lineup_first [class^="lineup_"]:nth-of-type(2){
+		margin:1rem 0 0 0;
+		}
+	.lineup_2nd [class^="lineup_"]{
+		flex-wrap: wrap;
+		}
+	[class="background_lineup"]{
+		background-image:url(../img/bg_section_lineup_sp.jpg);
+		}
+	[class="background_aboutGoods"]{
+		background-size:cover;
+		background-image:url(../img/bg_section_pouch_sp.jpg);
+	}
+}
+/*area_lineUp end*/
+/*about pouch start*/
+.explain_pouch{
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 3px solid #c92227;
+	padding: 4rem 1rem;
+    background-image: url(../img/logo_stars.png);
+    background-size: contain;
+    background-position:left center;
+    background-repeat: no-repeat;
+	}
+.explain_pouch .title{
+	text-align:center;
+	font-size:3rem;
+	font-weight: 600;
+	max-width: 960px;
+	width: 100%;
+	margin: auto;
+	}
+.explain_pouch .title:after{
+    content: "";
+    display: block;
+    height: 7px;
+    width: 90%;
+    margin: auto;
+    background-image: url(../img/underline.png);
+    background-position: center;
+    background-repeat: repeat no-repeat;
+	}
+.explain_pouch .title span{
+	display:block;
+	}
+.explain_pouch .visual{
+	margin:2rem 0;
+	}
+.explain_pouch .visual [class^="pic_pouch"]{
+	position: relative;
+	max-width: 600px;
+	width: 100%;
+	margin: auto;
+	}
+.explain_pouch .visual [class^="pic_pouch"]:nth-of-type(2){
+	margin:2rem auto 0;
+	}
+.pic_pouch figcaption{
+	position: absolute;
+	bottom: 5%;
+	left: 0;
+	max-width: 20em;
+	width: 100%;
+	word-break: keep-all;
+	text-align: center;
+	}
+.pic_pouch_inside figcaption{
+	width: 100%;
+	}
+.pic_pouch_inside figcaption ol{
+	list-style: none;
+	counter-reset:olcounter;
+	}
+.pic_pouch_inside figcaption ol li{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items:baseline;	
+	}
+.pic_pouch_inside figcaption ol li:before{
+	content: counter(olcounter)".";
+	counter-increment: olcounter;
+	/* border: 1px solid #fff; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 1.0rem; */
+	/* height: 1.0rem; */
+	/* border-radius: 50%; */
+	font-size: 0.75rem;
+	margin: 0 0.5rem 0 0;
+	}
+.explain_pouch .intro_txt{
+	max-width: 40em;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 1.5rem;
+	text-shadow:0 0 5px #000,1px 1px 5px #000,1px -1px 5px #000,-1px 1px 5px #000,-1px -1px 5px #000;
+	}
+.explain_pouch .intro_txt p{
+	}
+.explain_pouch .intro_txt .item_spec{
+	margin:1rem 0;
+	}
+.explain_pouch .intro_txt .item_spec .size{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	}
+.explain_pouch .intro_txt .note{
+	font-size: 0.875rem;
+	text-indent: inherit;
+	}
+@media screen and (max-width:426px){
+	.explain_pouch{
+		background-size: 60%;
+		}
+	.pic_pouch figcaption{
+		position: inherit;
+    bottom: initial;
+    right: initial;
+		    margin: auto;
+	}
+	.explain_pouch .title{
+		font-size:1.5rem;
+		word-break: keep-all;
+	}
+	.explain_pouch .intro_txt{
+		font-size: 1.0rem;
+	}
+}
+/*main end*/
+/*game spec start*/
+.spceandlink{
+	padding:2rem 1rem 4rem;
+	}
+.spceandlink .gemespec{
+	max-width: 30em;
+	width: 100%;
+	color: #fff;
+  margin: 4rem auto;
+	padding:0 1rem;
+	}
+.spceandlink .gemespec tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+	}
+.spceandlink .gemespec th{
+    text-align: left;
+    max-width: 10em;
+    width: 100%;
+	}
+.spceandlink .gemespec th:before{
+	content:"■";
+    margin: 0 0.5rem 0 0;
+	}
+.spceandlink .gemespec td{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 20em;
+    width: 100%;
+	}
+.spceandlink .gemespec td:before{
+	display: block;
+	content:"：";
+	}
+.gemespec td [class^="rating_"]{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	}
+.gemespec td [class^="rating_"] span{
+	display:block;
+	}
+.spceandlink .gemespec .logo_cero{
+	max-width:40px;
+	width: 100%;
+	margin: 0 0 0 0.5rem;
+	}
+.spceandlink .link_official{
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto 2rem;
+	box-sizing: border-box;
+	}
+.spceandlink .link_official a{
+	display:block;
+	width:100%;
+	border: 3px solid #555555;
+	box-sizing: border-box;
+	}
+.spceandlink .link_official a:nth-of-type(2){
+	margin: 2rem 0 0 0;
+	}
+@media screen and (max-width:426px){
+	.spceandlink  .gemespec .tr_cero{
+		flex-wrap: wrap;
+		}
+	
+	}
+/*footer end*/
+/*to top start*/
+a[href="#totop"]{
+    display: block;
+	transform:translateY(5px) scale(0.9);
+	transition:all 0.4s;
+	}
+a[href="#totop"]:hover{
+	transform:translateY(0px) scale(1.0);
+	}
+.totopbtn_fade{
+	max-width:50px;
+	width:100%;
+	height:auto;
+	bottom:1rem;
+	right:1rem;
+	margin-left:auto;
+	position:fixed;
+	z-index:6;
+	}
+/*to top end*/
